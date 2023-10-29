@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\AlarmClockApp",
-    "\\AlarmClockApp\\Forms"
+    "\\AlarmClockApp\\Forms",
+    "\\AlarmClockApp\\Models"
   ],
-  "SelectedNode": "\\AlarmClockApp\\ClockForm.Designer.cs",
+  "SelectedNode": "\\AlarmClockApp\\Forms\\AlarmClockAddingForm.cs",
   "PreviewInSolutionExplorer": false
 }

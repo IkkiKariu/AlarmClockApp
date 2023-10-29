@@ -3,11 +3,61 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AlarmClockApp.Forms;
+
 
 namespace AlarmClockApp.Models
 {
-    internal class Settings
+    public class Settings
     {
-        public static TimeSpan AlarmTime { set; get; }
+        public static Dictionary<int, Dictionary<string, string>> AlarmTimes { get; private set; }
+
+        private static int nextID = 1;
+
+        public Settings()
+        {
+            AlarmTimes = new Dictionary<int, Dictionary<string, string>>();
+        }
+
+        public static  bool AddAlarmClockTime(string formatedTime, string message)
+        {
+            if (AlarmTimes != null)
+            {
+                foreach (Dictionary<string, string> time in AlarmTimes.Values)
+                {
+                    if (time.ContainsKey(formatedTime))
+                    {
+                        return false;
+                    }
+                }
+
+            }
+
+            AlarmTimes.Add(nextID, new Dictionary<string, string> { { "time", formatedTime }, { "message", message } });
+            nextID++;
+
+            AlarmClockQueueDisplayig();
+
+            return true;
+        }
+
+        public  void InitiateAlarm(int alarmTimeID)
+        {
+            new AlarmForm(alarmTimeID).ShowDialog();
+
+            AlarmTimes.Remove(alarmTimeID);
+
+            AlarmClockQueueDisplayig();
+        }
+
+        public static void AlarmClockQueueDisplayig()
+        {
+            ClockForm.settingsForm.alarmClockQueueLabel.Text = "";
+
+            foreach(Dictionary<string, string> timeDict in AlarmTimes.Values)
+            {
+                ClockForm.settingsForm.alarmClockQueueLabel.Text += $"time: {timeDict["time"]}\tmessage: {timeDict["message"]}";
+            }
+        }
     }
 }

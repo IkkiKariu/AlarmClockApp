@@ -16,6 +16,8 @@ namespace AlarmClockApp
     {
         ClockModel _model = new ClockModel();
 
+        public Settings settings = new Settings();
+
         public ClockForm()
         {
             InitializeComponent();
@@ -23,17 +25,28 @@ namespace AlarmClockApp
 
         private void SettingsButton_Click(object sender, EventArgs e)
         {
-            new SettingsForm().ShowDialog();
+
+            Settings.AlarmClockQueueDisplayig();
+
+            settingsForm.ShowDialog();
         }
 
         private void ClockTimer_Tick(object sender, EventArgs e)
         {
             DisplayLabel.Text = _model.CurrentTime.ToString(@"hh\:mm\:ss");
 
-            if (DisplayLabel.Text == Settings.AlarmTime.ToString(@"hh\:mm\:ss"))
+            if (Settings.AlarmTimes != null)
             {
-                new AlarmForm().ShowDialog();   
+                foreach (var alarmTime in Settings.AlarmTimes)
+                {
+                    if (DisplayLabel.Text == alarmTime.Value["time"])
+                    {
+                        settings.InitiateAlarm(alarmTime.Key);
+                        break;
+                    }
+                }
             }
+            
         }
 
         private void AboutButton_Click(object sender, EventArgs e)

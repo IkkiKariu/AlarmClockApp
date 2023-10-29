@@ -1,4 +1,7 @@
-﻿namespace AlarmClockApp.Forms
+﻿using AlarmClockApp.Models;
+
+
+namespace AlarmClockApp.Forms
 {
     partial class AlarmForm
     {
@@ -26,40 +29,26 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        private void InitializeComponent(int currentAlarmTimeID)
         {
-            this.alarmLabel = new System.Windows.Forms.Label();
-            this.okButton = new System.Windows.Forms.Button();
+            this.alarmMessageLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // alarmLabel
+            // alarmMessageLabel
             // 
-            this.alarmLabel.AutoSize = true;
-            this.alarmLabel.Location = new System.Drawing.Point(114, 87);
-            this.alarmLabel.Name = "alarmLabel";
-            this.alarmLabel.Size = new System.Drawing.Size(36, 13);
-            this.alarmLabel.TabIndex = 0;
-            this.alarmLabel.Text = "Alarm!";
-            // 
-            // okButton
-            //
-            this.okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.okButton.Location = new System.Drawing.Point(92, 180);
-            this.okButton.Name = "okButton";
-            this.okButton.Size = new System.Drawing.Size(75, 23);
-            this.okButton.TabIndex = 1;
-            this.okButton.Text = "OK";
-            this.okButton.UseVisualStyleBackColor = true;
+            this.alarmMessageLabel.AutoSize = true;
+            this.alarmMessageLabel.Location = new System.Drawing.Point(121, 111);
+            this.alarmMessageLabel.Name = "alarmMessageLabel";
+            this.alarmMessageLabel.Size = new System.Drawing.Size(35, 13);
+            this.alarmMessageLabel.TabIndex = 0;
+            this.alarmMessageLabel.Text = "label1";
+            this.alarmMessageLabel.Text = $"{currentAlarmTimeID} : { Settings.AlarmTimes[currentAlarmTimeID]["message"]}";
             // 
             // AlarmForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(264, 215);
-            this.Controls.Add(this.okButton);
-            this.Controls.Add(this.alarmLabel);
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.alarmMessageLabel);
             this.Name = "AlarmForm";
-            this.Text = "AlarmForm";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -69,5 +58,6 @@
 
         private System.Windows.Forms.Label alarmLabel;
         private System.Windows.Forms.Button okButton;
+        private System.Windows.Forms.Label alarmMessageLabel;
     }
 }

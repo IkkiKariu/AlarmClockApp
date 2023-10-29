@@ -30,33 +30,13 @@ namespace AlarmClockApp.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.alarmTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.TimeSetButton = new System.Windows.Forms.Button();
             this.okButton = new System.Windows.Forms.Button();
+            this.AddAlarmClockButton = new System.Windows.Forms.Button();
+            this.alarmClockQueueLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // alarmTimePicker
-            // 
-            this.alarmTimePicker.CustomFormat = "HH:mm:ss";
-            this.alarmTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.alarmTimePicker.Location = new System.Drawing.Point(94, 94);
-            this.alarmTimePicker.Name = "alarmTimePicker";
-            this.alarmTimePicker.ShowUpDown = true;
-            this.alarmTimePicker.Size = new System.Drawing.Size(200, 20);
-            this.alarmTimePicker.TabIndex = 0;
-            // 
-            // TimeSetButton
-            // 
-            this.TimeSetButton.Location = new System.Drawing.Point(155, 150);
-            this.TimeSetButton.Name = "TimeSetButton";
-            this.TimeSetButton.Size = new System.Drawing.Size(75, 23);
-            this.TimeSetButton.TabIndex = 1;
-            this.TimeSetButton.Text = "Set time";
-            this.TimeSetButton.UseVisualStyleBackColor = true;
-            this.TimeSetButton.Click += new System.EventHandler(this.TimeSetButton_Click);
-            // 
             // okButton
-            //
+            // 
             this.okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.okButton.Location = new System.Drawing.Point(155, 260);
             this.okButton.Name = "okButton";
@@ -65,24 +45,43 @@ namespace AlarmClockApp.Forms
             this.okButton.Text = "OK";
             this.okButton.UseVisualStyleBackColor = true;
             // 
+            // AddAlarmClockButton
+            // 
+            this.AddAlarmClockButton.Location = new System.Drawing.Point(12, 12);
+            this.AddAlarmClockButton.Name = "AddAlarmClockButton";
+            this.AddAlarmClockButton.Size = new System.Drawing.Size(129, 38);
+            this.AddAlarmClockButton.TabIndex = 3;
+            this.AddAlarmClockButton.Text = "Add alarm clock";
+            this.AddAlarmClockButton.UseVisualStyleBackColor = true;
+            this.AddAlarmClockButton.Click += new System.EventHandler(this.AddAlarmClockButton_Click);
+            // 
+            // alarmClockQueueLabel
+            // 
+            this.alarmClockQueueLabel.AutoSize = true;
+            this.alarmClockQueueLabel.Location = new System.Drawing.Point(12, 83);
+            this.alarmClockQueueLabel.Name = "alarmClockQueueLabel";
+            this.alarmClockQueueLabel.Size = new System.Drawing.Size(35, 13);
+            this.alarmClockQueueLabel.TabIndex = 4;
+            this.alarmClockQueueLabel.Text = "label1";
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(404, 302);
+            this.Controls.Add(this.alarmClockQueueLabel);
+            this.Controls.Add(this.AddAlarmClockButton);
             this.Controls.Add(this.okButton);
-            this.Controls.Add(this.TimeSetButton);
-            this.Controls.Add(this.alarmTimePicker);
             this.Name = "SettingsForm";
             this.Text = "SettingsForm";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DateTimePicker alarmTimePicker;
-        private System.Windows.Forms.Button TimeSetButton;
         private Button okButton;
+        private Button AddAlarmClockButton;
+        public Label alarmClockQueueLabel;
     }
 }

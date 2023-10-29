@@ -1,4 +1,6 @@
-﻿namespace AlarmClockApp
+﻿using AlarmClockApp.Models;
+using AlarmClockApp.Forms;
+namespace AlarmClockApp
 {
     partial class ClockForm
     {
@@ -98,7 +100,10 @@
             this.Name = "ClockForm";
             this.Text = "Часы-будильник";
             this.ResumeLayout(false);
-
+            //
+            // settingsForm
+            //
+            settingsForm = new SettingsForm();
         }
 
         #endregion
@@ -108,6 +113,7 @@
         private System.Windows.Forms.Button StopButton;
         private System.Windows.Forms.Button AboutButton;
         private System.Windows.Forms.Timer ClockTimer;
+        public static SettingsForm settingsForm;
     }
 }
 

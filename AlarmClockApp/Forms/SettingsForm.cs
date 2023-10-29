@@ -18,9 +18,9 @@ namespace AlarmClockApp.Forms
             InitializeComponent();
         }
 
-        private void TimeSetButton_Click(object sender, EventArgs e)
+        private void AddAlarmClockButton_Click(object sender, EventArgs e)
         {
-            Settings.AlarmTime = alarmTimePicker.Value.TimeOfDay;
+            new AlarmClockAddingForm().ShowDialog();
         }
     }
 }

@@ -12,9 +12,9 @@ namespace AlarmClockApp.Forms
 {
     public partial class AlarmForm : Form
     {
-        public AlarmForm()
+        public AlarmForm(int currentAlarmTimeID)
         {
-            InitializeComponent();
+            InitializeComponent(currentAlarmTimeID);
         }
     }
 }
