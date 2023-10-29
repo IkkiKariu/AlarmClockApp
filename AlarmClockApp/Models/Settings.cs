@@ -47,16 +47,15 @@ namespace AlarmClockApp.Models
 
             AlarmTimes.Remove(alarmTimeID);
 
+            ClockForm.settingsForm.alarmClockQueueLabel.Text = "";
             AlarmClockQueueDisplayig();
         }
 
         public static void AlarmClockQueueDisplayig()
         {
-            ClockForm.settingsForm.alarmClockQueueLabel.Text = "";
-
             foreach(Dictionary<string, string> timeDict in AlarmTimes.Values)
             {
-                ClockForm.settingsForm.alarmClockQueueLabel.Text += $"time: {timeDict["time"]}\tmessage: {timeDict["message"]}";
+                ClockForm.settingsForm.alarmClockQueueLabel.Text += $"time: {timeDict["time"]} message: {timeDict["message"]}\n";
             }
         }
     }

@@ -4,6 +4,7 @@ namespace AlarmClockApp
 {
     partial class ClockForm
     {
+        public static SettingsForm settingsForm = new SettingsForm();
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -100,10 +101,7 @@ namespace AlarmClockApp
             this.Name = "ClockForm";
             this.Text = "Часы-будильник";
             this.ResumeLayout(false);
-            //
-            // settingsForm
-            //
-            settingsForm = new SettingsForm();
+
         }
 
         #endregion
@@ -113,7 +111,6 @@ namespace AlarmClockApp
         private System.Windows.Forms.Button StopButton;
         private System.Windows.Forms.Button AboutButton;
         private System.Windows.Forms.Timer ClockTimer;
-        public static SettingsForm settingsForm;
     }
 }
 

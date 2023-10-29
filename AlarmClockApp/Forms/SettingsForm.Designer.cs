@@ -62,7 +62,7 @@ namespace AlarmClockApp.Forms
             this.alarmClockQueueLabel.Name = "alarmClockQueueLabel";
             this.alarmClockQueueLabel.Size = new System.Drawing.Size(35, 13);
             this.alarmClockQueueLabel.TabIndex = 4;
-            this.alarmClockQueueLabel.Text = "label1";
+            this.alarmClockQueueLabel.Text = "AlarmClockQueue\n";
             // 
             // SettingsForm
             // 
