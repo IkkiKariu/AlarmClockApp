@@ -31,18 +31,18 @@ namespace AlarmClockApp.Forms
         /// </summary>
         private void InitializeComponent(int currentAlarmTimeID)
         {
+            this.stopSignalButton = new System.Windows.Forms.Button();
             this.alarmMessageLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // alarmMessageLabel
             // 
             this.alarmMessageLabel.AutoSize = true;
-            this.alarmMessageLabel.Location = new System.Drawing.Point(121, 111);
+            this.alarmMessageLabel.Location = new System.Drawing.Point(116, 120);
             this.alarmMessageLabel.Name = "alarmMessageLabel";
             this.alarmMessageLabel.Size = new System.Drawing.Size(35, 13);
             this.alarmMessageLabel.TabIndex = 0;
-            this.alarmMessageLabel.Text = "label1";
-            this.alarmMessageLabel.Text = $"{currentAlarmTimeID} : { Settings.AlarmTimes[currentAlarmTimeID]["message"]}";
+            this.alarmMessageLabel.Text = $"{Settings.AlarmTimes[currentAlarmTimeID]["message"]}";
             // 
             // AlarmForm
             // 
@@ -51,13 +51,18 @@ namespace AlarmClockApp.Forms
             this.Name = "AlarmForm";
             this.ResumeLayout(false);
             this.PerformLayout();
-
+            // 
+            // stopSignalButton
+            //
+            this.stopSignalButton.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.stopSignalButton.Location = new System.Drawing.Point(100, 200);
+            this.stopSignalButton.Text = "Остановить";
+            this.Controls.Add(this.stopSignalButton);
         }
 
         #endregion
 
-        private System.Windows.Forms.Label alarmLabel;
-        private System.Windows.Forms.Button okButton;
+        private System.Windows.Forms.Button stopSignalButton;
         private System.Windows.Forms.Label alarmMessageLabel;
     }
 }

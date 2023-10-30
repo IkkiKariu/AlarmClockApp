@@ -39,10 +39,13 @@ namespace AlarmClockApp
             {
                 foreach (var alarmTime in Settings.AlarmTimes)
                 {
-                    if (DisplayLabel.Text == alarmTime.Value["time"])
+                    foreach (var time in alarmTime.Value)
                     {
-                        settings.InitiateAlarm(alarmTime.Key);
-                        break;
+                        if (DisplayLabel.Text == time.Value) 
+                        {
+                            settings.InitiateAlarm(alarmTime.Key);
+                            return;
+                        }
                     }
                 }
             }

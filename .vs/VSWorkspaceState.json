@@ -5,6 +5,6 @@
     "\\AlarmClockApp\\Forms",
     "\\AlarmClockApp\\Models"
   ],
-  "SelectedNode": "\\AlarmClockApp\\Forms\\AlarmClockAddingForm.cs",
+  "SelectedNode": "\\AlarmClockApp\\Models\\Settings.cs",
   "PreviewInSolutionExplorer": false
 }

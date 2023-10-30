@@ -10,16 +10,16 @@ namespace AlarmClockApp.Models
 {
     public class Settings
     {
-        public static Dictionary<int, Dictionary<string, string>> AlarmTimes { get; private set; }
+        public static Dictionary<int, Dictionary<string, string>> AlarmTimes = new Dictionary<int, Dictionary<string, string>>();
 
         private static int nextID = 1;
 
         public Settings()
         {
-            AlarmTimes = new Dictionary<int, Dictionary<string, string>>();
+            //AlarmTimes = new Dictionary<int, Dictionary<string, string>>();
         }
 
-        public static  bool AddAlarmClockTime(string formatedTime, string message)
+        public static bool AddAlarmClockTime(string formatedTime, string message)
         {
             if (AlarmTimes != null)
             {
@@ -33,7 +33,8 @@ namespace AlarmClockApp.Models
 
             }
 
-            AlarmTimes.Add(nextID, new Dictionary<string, string> { { "time", formatedTime }, { "message", message } });
+            AlarmTimes.Add(nextID, new Dictionary<string, string> () { { "time", formatedTime }, { "message", message } });
+
             nextID++;
 
             AlarmClockQueueDisplayig();
@@ -41,21 +42,22 @@ namespace AlarmClockApp.Models
             return true;
         }
 
-        public  void InitiateAlarm(int alarmTimeID)
+        public void InitiateAlarm(int alarmTimeID)
         {
             new AlarmForm(alarmTimeID).ShowDialog();
 
             AlarmTimes.Remove(alarmTimeID);
 
-            ClockForm.settingsForm.alarmClockQueueLabel.Text = "";
             AlarmClockQueueDisplayig();
         }
 
         public static void AlarmClockQueueDisplayig()
         {
-            foreach(Dictionary<string, string> timeDict in AlarmTimes.Values)
+            ClockForm.settingsForm.alarmClockQueueLabel.Text = "";
+
+            foreach (Dictionary<string, string> timeDict in AlarmTimes.Values)
             {
-                ClockForm.settingsForm.alarmClockQueueLabel.Text += $"time: {timeDict["time"]} message: {timeDict["message"]}\n";
+                ClockForm.settingsForm.alarmClockQueueLabel.Text += $"Time: {timeDict["time"]}    Message: {timeDict["message"]}\n";
             }
         }
     }

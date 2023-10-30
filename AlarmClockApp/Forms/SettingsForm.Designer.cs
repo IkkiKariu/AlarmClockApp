@@ -33,6 +33,7 @@ namespace AlarmClockApp.Forms
             this.okButton = new System.Windows.Forms.Button();
             this.AddAlarmClockButton = new System.Windows.Forms.Button();
             this.alarmClockQueueLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // okButton
@@ -60,15 +61,24 @@ namespace AlarmClockApp.Forms
             this.alarmClockQueueLabel.AutoSize = true;
             this.alarmClockQueueLabel.Location = new System.Drawing.Point(12, 83);
             this.alarmClockQueueLabel.Name = "alarmClockQueueLabel";
-            this.alarmClockQueueLabel.Size = new System.Drawing.Size(35, 13);
+            this.alarmClockQueueLabel.Size = new System.Drawing.Size(0, 13);
             this.alarmClockQueueLabel.TabIndex = 4;
-            this.alarmClockQueueLabel.Text = "AlarmClockQueue\n";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(27, 65);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(98, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Alarm clock queue:";
             // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(404, 302);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.alarmClockQueueLabel);
             this.Controls.Add(this.AddAlarmClockButton);
             this.Controls.Add(this.okButton);
@@ -83,5 +93,6 @@ namespace AlarmClockApp.Forms
         private Button okButton;
         private Button AddAlarmClockButton;
         public Label alarmClockQueueLabel;
+        private Label label1;
     }
 }
