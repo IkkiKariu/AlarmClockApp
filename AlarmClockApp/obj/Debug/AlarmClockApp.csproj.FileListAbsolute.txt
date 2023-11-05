@@ -27,3 +27,4 @@ D:\Programs\Projects\cs\AlarmClockApp\AlarmClockApp\obj\Debug\AlarmClockApp.cspr
 D:\Programs\Projects\cs\AlarmClockApp\AlarmClockApp\obj\Debug\AlarmClockApp.exe
 D:\Programs\Projects\cs\AlarmClockApp\AlarmClockApp\obj\Debug\AlarmClockApp.pdb
 D:\Programs\Projects\cs\AlarmClockApp\AlarmClockApp\obj\Debug\AlarmClockApp.Forms.AlarmClockAddingForm.resources
+D:\Programs\Projects\cs\AlarmClockApp\AlarmClockApp\obj\Debug\AlarmClockApp.Forms.StopWatchForm.resources

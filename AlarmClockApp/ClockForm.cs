@@ -56,5 +56,15 @@ namespace AlarmClockApp
         {
             new AboutForm().ShowDialog();
         }
+
+        private void StopWatch_Click(object sender, EventArgs e)
+        {
+            this.StopWatchForm.ShowDialog();
+        }
+
+        private void StopWatchForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

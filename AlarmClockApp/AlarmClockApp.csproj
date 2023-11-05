@@ -76,8 +76,15 @@
     <Compile Include="Forms\SettingsForm.Designer.cs">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\StopWatchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StopWatchForm.Designer.cs">
+      <DependentUpon>StopWatchForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\ClockModel.cs" />
     <Compile Include="Models\Settings.cs" />
+    <Compile Include="Models\StopWatch.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ClockForm.resx">
@@ -94,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SettingsForm.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StopWatchForm.resx">
+      <DependentUpon>StopWatchForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

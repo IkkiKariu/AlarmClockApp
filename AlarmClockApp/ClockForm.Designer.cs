@@ -1,5 +1,7 @@
 ﻿using AlarmClockApp.Models;
 using AlarmClockApp.Forms;
+using System.Net.Http.Headers;
+
 namespace AlarmClockApp
 {
     partial class ClockForm
@@ -37,6 +39,8 @@ namespace AlarmClockApp
             this.StopButton = new System.Windows.Forms.Button();
             this.AboutButton = new System.Windows.Forms.Button();
             this.ClockTimer = new System.Windows.Forms.Timer(this.components);
+            this.StopWatch = new System.Windows.Forms.Button();
+            this.StopWatchForm = new AlarmClockApp.Forms.StopWatchForm();
             this.SuspendLayout();
             // 
             // DisplayLabel
@@ -86,11 +90,31 @@ namespace AlarmClockApp
             this.ClockTimer.Interval = 1000;
             this.ClockTimer.Tick += new System.EventHandler(this.ClockTimer_Tick);
             // 
+            // StopWatch
+            // 
+            this.StopWatch.Location = new System.Drawing.Point(12, 107);
+            this.StopWatch.Name = "StopWatch";
+            this.StopWatch.Size = new System.Drawing.Size(79, 23);
+            this.StopWatch.TabIndex = 4;
+            this.StopWatch.Text = "Секундомер";
+            this.StopWatch.UseVisualStyleBackColor = true;
+            this.StopWatch.Click += new System.EventHandler(this.StopWatch_Click);
+            // 
+            // StopWatchForm
+            // 
+            this.StopWatchForm.ClientSize = new System.Drawing.Size(402, 160);
+            this.StopWatchForm.Location = new System.Drawing.Point(182, 182);
+            this.StopWatchForm.Name = "StopWatchForm";
+            this.StopWatchForm.Text = "StopWatchForm";
+            this.StopWatchForm.Visible = false;
+            this.StopWatchForm.Load += new System.EventHandler(this.StopWatchForm_Load);
+            // 
             // ClockForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(413, 109);
+            this.ClientSize = new System.Drawing.Size(413, 142);
+            this.Controls.Add(this.StopWatch);
             this.Controls.Add(this.AboutButton);
             this.Controls.Add(this.StopButton);
             this.Controls.Add(this.SettingsButton);
@@ -111,6 +135,8 @@ namespace AlarmClockApp
         private System.Windows.Forms.Button StopButton;
         private System.Windows.Forms.Button AboutButton;
         private System.Windows.Forms.Timer ClockTimer;
+        private Forms.StopWatchForm StopWatchForm;
+        private System.Windows.Forms.Button StopWatch;
     }
 }
 
