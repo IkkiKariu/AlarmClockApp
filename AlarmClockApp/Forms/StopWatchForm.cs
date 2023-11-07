@@ -29,16 +29,21 @@ namespace AlarmClockApp.Forms
 
         private void startButton_Click(object sender, EventArgs e)
         {
-            this.stopWatchModel.StartTime = DateTime.Now;
-            stopWatchTimer.Start();
+            if (!stopWatchTimer.Enabled)
+            {
+                this.stopWatchModel.StartTime = DateTime.Now;
+                stopWatchTimer.Start();
+            }
             
         }
 
         private void stopButton_Click(object sender, EventArgs e)
         {
-            stopWatchTimer.Stop();
-            this.stopWatchModel.TotalElapsedTime = this.stopWatchModel.ElapsedTime;
-                
+            if (stopWatchTimer.Enabled)
+            {
+                stopWatchTimer.Stop();
+                this.stopWatchModel.TotalElapsedTime = this.stopWatchModel.ElapsedTime;
+            }
         }
 
         private void resetButton_Click(object sender, EventArgs e)

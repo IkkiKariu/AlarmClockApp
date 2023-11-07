@@ -40,7 +40,7 @@ namespace AlarmClockApp
             this.AboutButton = new System.Windows.Forms.Button();
             this.ClockTimer = new System.Windows.Forms.Timer(this.components);
             this.StopWatch = new System.Windows.Forms.Button();
-            this.StopWatchForm = new AlarmClockApp.Forms.StopWatchForm();
+            this.StopWatchForm = new Forms.StopWatchForm();
             this.SuspendLayout();
             // 
             // DisplayLabel
@@ -100,15 +100,6 @@ namespace AlarmClockApp
             this.StopWatch.UseVisualStyleBackColor = true;
             this.StopWatch.Click += new System.EventHandler(this.StopWatch_Click);
             // 
-            // StopWatchForm
-            // 
-            this.StopWatchForm.ClientSize = new System.Drawing.Size(402, 160);
-            this.StopWatchForm.Location = new System.Drawing.Point(182, 182);
-            this.StopWatchForm.Name = "StopWatchForm";
-            this.StopWatchForm.Text = "StopWatchForm";
-            this.StopWatchForm.Visible = false;
-            this.StopWatchForm.Load += new System.EventHandler(this.StopWatchForm_Load);
-            // 
             // ClockForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -135,8 +126,8 @@ namespace AlarmClockApp
         private System.Windows.Forms.Button StopButton;
         private System.Windows.Forms.Button AboutButton;
         private System.Windows.Forms.Timer ClockTimer;
-        private Forms.StopWatchForm StopWatchForm;
         private System.Windows.Forms.Button StopWatch;
+        private Forms.StopWatchForm StopWatchForm;
     }
 }
 
